@@ -1,0 +1,6 @@
+development:
+  password: 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
+  theme_id: "115267502231"
+  store: triumph-dev-store.myshopify.com
+  ignore_files:
+    - config/settings_data.json

@@ -1,0 +1,30 @@
+<div class="hero-bike">
+  <h1 class="text-white text-6xl font-extrabold pt-32"><span class="bg-black px-2">Live Free. Ride Hard.</span></h1>
+</div>
+
+{{ content_for_index }}
+
+<div class="grid grid-flow-col gap-2 max-w-screen-xl my-2 mx-auto text-center pt-6">
+  {% for product in collections.frontpage.products limit:3 %}
+    <div class="m-0 transition transform hover:-translate-y-1 hover:scale-110 motion-reduce:transition-none motion-reduce:transform-none">
+      <a href="{{ product.url | within: collection }}">
+        <img src="{{ product.featured_image.src | img_url: 'large' }}" alt="{{ product.featured_image.alt | escape }}" class="mx-auto h-64 w-auto rounded-lg">
+      </a>
+      <a href="{{ product.url | within: collection }}" class="text-large text-purple-600 font-extrabold">{{ product.title }}</a>
+      {{ product.price | money }}
+      {% unless product.available %}<br><strong>sold out</strong>{% endunless %}
+    </div>
+  {% endfor %}
+</div>
+
+<style>
+  .hero-bike {
+    background: url(https://res.cloudinary.com/tpage99/image/upload/v1605149872/Shopify/harley-davidson-02tt7EvQKhw-unsplash.jpg);
+    background-size: cover;
+    background-position: center;
+    height: 450px;
+    align-content: center;
+    text-align: center;
+    vertical-align: middle;
+  }
+</style>
