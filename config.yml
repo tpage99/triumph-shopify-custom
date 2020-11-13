@@ -4,3 +4,4 @@ development:
   store: triumph-dev-store.myshopify.com
   ignore_files:
     - config/settings_data.json
+    - README.md
